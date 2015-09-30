@@ -11,7 +11,7 @@ end
 get '/fb' do
 
   h = "<html><body><h1>Bookmarks and Tags:</h1>"
-  h = h +  "<form action='/form' method='post'>
+  h = h +  "<form action='/fb' method='post'>
         <input type='text'id='urlInput'name='url'placeholder='URL'>
         <input type='text'id='tagInput'name='tag'placeholder='Tag'>
         <input type='submit'>
@@ -28,7 +28,7 @@ get '/fb' do
   return h
 end
 
-post '/form' do
+post '/fb' do
   fb.push("bookmark", { :url => params[:url], :tag => params[:tag]})
   redirect '/fb'
 end
