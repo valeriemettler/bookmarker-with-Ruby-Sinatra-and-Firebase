@@ -10,12 +10,14 @@ end
 
 get '/fb' do
 
-  h = "<html><body><h1>Bookmarks and Tags:</h1>"
-  h = h +  "<form action='/fb' method='post'>
+  h = %(
+  <html><body><h1>Bookmarks and Tags:</h1>
+  <form action='/fb' method='post'>
         <input type='text'id='urlInput'name='url'placeholder='URL'>
         <input type='text'id='tagInput'name='tag'placeholder='Tag'>
         <input type='submit'>
-    </form>"
+   </form>
+   )
 
   x = fb.get("bookmark").body
 
